@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form </title>
+
+</head>
+
+<style>
+    * {
+        font-weight: 100;
+        font-size: 25px;
+    }
+
+    body {
+        background: url(./backgroundimagefeed.jpg);
+        background-size: 100%;
+    }
+
+    .header {
+        box-shadow: 10px 10px 5px grey;
+        text-align: center;
+        background-color: rgb(0, 150, 137);
+        padding: 5px;
+        padding-bottom: 50px;
+    }
+
+    header div h2 {
+        font-weight: bold;
+    }
+
+    .link {
+        background-color: cornsilk;
+        border: 3px solid blue;
+        padding: 5px 15px 5px 15px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .section-form {
+        box-shadow: 10px 10px 5px grey;
+        margin-bottom: 50px;
+
+        float: left;
+        width: 750px;
+        background-color: blueviolet;
+    }
+
+    .section-feed {
+        box-shadow: 10px 10px 5px grey;
+
+        float: right;
+        width: 600px;
+        margin-right: 50px;
+        background-color: blueviolet;
+    }
+
+    .form-heading {
+        background-color: white;
+        padding: 5px;
+        margin: 25px;
+        border-radius: 5px;
+        width: 580px;
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    .form-group {
+        background-color: white;
+        margin: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .default {
+        background-color: rgb(43, 220, 226);
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+    .btn {
+        border: 5px solid black;
+        margin: 20px;
+        margin-left: 120px;
+        margin-bottom: 100px;
+        padding: 5px 50px 5px 50px;
+    }
+
+    .comment-heading {
+        background-color: white;
+        padding: 5px;
+        margin: 25px;
+        border-radius: 5px;
+        width: 510px;
+        font-size: 40px;
+        margin-bottom: 45px;
+    }
+
+    footer {
+        box-shadow: 10px 10px 5px grey;
+        margin-top: 1150px;
+        margin-bottom: 20px;
+        background-color: rgb(126, 35, 81);
+    }
+
+    .f1 {
+        text-align: center;
+        background-color: rgb(126, 35, 81);
+        color: white;
+        padding: 0.5%;
+        font-size: 15px;
+    }
+
+    .f2 {
+        background-color: rgb(126, 35, 81);
+        color: white;
+        font-size: 12px;
+    }
+
+    #f2a {
+        padding: 1%;
+    }
+</style>
+
+<script>
+    function validateform() {
+        var salutation = document.myform.salutation.value;
+        var fname = document.myform.firstname.value;
+        var lname = document.myform.lastname.value;
+        var gender = document.myform.gender.value;
+        var phone = document.myform.phone.value;
+        var phoneno1 = /^\d{10}$/;
+        var x = document.myform.email.value;
+        var comt = document.myform.comment.value;
+        var atposition = x.indexOf("@");
+        var dotposition = x.lastIndexOf(".");
+
+        if (fname == null || fname == "") {
+            alert("Please Enter first name ");
+            return false;
+        }
+        else if (lname == null || lname == "") {
+            alert("Please Enter last name ");
+            return false;
+        }
+        else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+            alert("Please enter a valid e-mail address .");
+            return false;
+        }
+        else if (gender != salutation) {
+            alert("Enter either gender or salutation wrong ");
+            return false
+        }
+        else if (!phone.match(phoneno1)) {
+            alert("Not a valid Phone Number");
+            return false;
+        }
+
+        var list = document.getElementById("newcomment");
+        var count = list.childNodes.length;
+
+        var namenode = document.createElement("h3");
+        namenode.textContent = salutation + " " + fname + " " + lname;
+        var commentNode = document.createElement("p");
+        commentNode.textContent = comt;
+        var commentSection = document.querySelector(".comment-heading")
+        commentSection.insertAdjacentElement("afterend", namenode)
+        namenode.insertAdjacentElement("afterend", commentNode);
+
+        if (count >= 12) {
+            list.removeChild(list.childNodes[count - 1])
+            list.removeChild(list.childNodes[count - 2])
+        }
+        return false;
+    }
+</script>
+
+<body>
+    <section class="section-header">
+        <header>
+            <div class="header">
+                <h2>Welcome to Feedback Form : </h2>
+                <a href="AboutMeCSS.html" class="link" target="_blank">HomePage</a>&nbsp;
+                <a href="myBook.html" class="link" target="_blank">MyBooks</a>&nbsp;
+            </div>
+        </header>
+    </section>
+
+    <menu class="menu">
+        <section class="section-form">
+            <h2 class="form-heading"> Write Your Valuable Feedback : </h2>
+            <form onsubmit="return validateform()" class="feedback" name="myform">
+                <div class="form-group">
+                    <label for="salutation" class="default">Salutaion : </label>
+                    <select name="salutation" id="salutation">
+                        <option value="0">Mr.\Ms.</option>
+                        <option value="mr">Mr.</option>
+                        <option value="miss">Ms.</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="username" class="default">First Name :</label>
+                    <input type="text" name="firstname" id="firstname" placeholder="Enter first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname" class="default">Last Name :</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Enter last Name" required>
+                </div>
+                <div class="form-radio form-group">
+                    <label for="gender" class=default>Gender :</label>
+                    <input type="radio" name="gender" value="mr" id="male">
+                    <label for="male" class="default">Male</label>
+                    <input type="radio" name="gender" value="miss" id="female">
+                    <label for="female" class="default">Female</label>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="default">Mob No. :</label>
+                    <input type="text" name="phone" id="phone" placeholder="Mobile number">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="default">Email : </label>
+                    <input type="text" name="email" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="comment" class="default">Comment : </label>
+                    <br><br>
+                    <textarea name="comment" id="comment" cols="30" rows="10"
+                        placeholder="Write your feedback..."></textarea>
+                </div>
+                <input type="submit" class="submit default btn" value="submit">
+                <input type="reset" name="reset" class="reset default btn">
+            </form>
+        </section>
+        <section class="section-feed">
+            <div class="comment" id="newcomment">
+                <h2 class="comment-heading">Thank you for your feedbacks : </h2>
+            </div>
+        </section>
+    </menu>
+    <footer>
+        <div class="f1">
+            <details class="f1">
+                <summary class="f1">
+                    This document has been written by :
+                </summary>
+                Amit Kumar Student@MCA-NIT-Bhopal
+            </details>
+        </div>
+
+        <div class="f2" id="f2a">
+            <h5 class="f2">Contact Me:</h5>
+            <p class="f2">Amit Kumar <br>
+                Student @MCA-NIT-Bhopal <br>
+                Mob no.- 8873254890 <br>
+                email - amitsharmajm02@gmail.com <br>
+                Address - Sandalpur Patna-6
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

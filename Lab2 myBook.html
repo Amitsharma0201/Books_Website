@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+</head>
+
+<style>
+    * {
+        background-color: rgb(7, 9, 75);
+        font-family: sans-serif;
+    }
+
+    header {
+        text-align: center;
+        color: white;
+    }
+
+    #Heading {
+        font-size: 70px;
+        font-weight: bold;
+        color: rgb(218, 69, 42);
+        background-color: rgb(167, 230, 42);
+        width: 1200px;
+
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 1%;
+
+        margin: 50px;
+        margin-left: 0px;
+
+        border: 1px solid rgb(167, 230, 42);
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+
+    }
+
+    #following {
+        text-align: center;
+        color: aliceblue;
+        font-size: 25px;
+
+        background-color: rgb(218, 69, 42);
+
+        border: 1px solid rgb(218, 69, 42);
+        border-radius: 100px;
+        margin-top: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
+
+        padding: 10px;
+
+    }
+
+    .firstSection {
+        width: 1200px;
+        height: 300px;
+        background-color: rgb(152 78 220);
+        border: rgb(152 78 220);
+        border-bottom-right-radius: 25%;
+        margin-top: 6%;
+    }
+
+    #firstImg {
+        background-color: rgb(152 78 220);
+
+        float: left;
+        width: 200px;
+        padding: 1%;
+    }
+
+    .firstPara {
+        background-color: rgb(152 78 220);
+
+        font-size: 20px;
+
+        color: white;
+    }
+
+    #first {
+        border-bottom-right-radius: 25%;
+        padding: 2%;
+        margin: 2%;
+        margin-left: 20%;
+    }
+
+    .secondSection {
+        margin-left: 300px;
+        width: 1200px;
+        height: 300px;
+        background-color: rgb(61 198 110);
+        border: rgb(61 198 110);
+        border-bottom-left-radius: 25%;
+        margin-top: 6%;
+    }
+
+    #secondImg {
+        background-color: rgb(61 198 110);
+        float: right;
+        width: 192px;
+        padding: 1%;
+
+    }
+
+    .secondPara {
+        background-color: rgb(61 198 110);
+        font-size: 20px;
+        color: white;
+    }
+
+    #second {
+        border-bottom-right-radius: 25%;
+        padding: 2%;
+        margin: 2%;
+        /* margin-left:0%; */
+    }
+
+    .thirdSection {
+        width: 1200px;
+        height: 300px;
+        background-color: rgb(171 103 160);
+        border: rgb(171 103 160);
+        border-bottom-right-radius: 25%;
+        margin-top: 6%;
+    }
+
+    #thirdImg {
+        background-color: rgb(171 103 160);
+
+        float: left;
+        width: 181px;
+        padding: 1%;
+    }
+
+    .thirdPara {
+        background-color: rgb(171 103 160);
+        font-size: 20px;
+        color: white;
+    }
+
+    #third {
+        border-bottom-right-radius: 25%;
+        padding: 2%;
+        margin: 2%;
+        margin-left: 20%;
+    }
+
+    .footer{
+        background-color: rgb(3 66 121);
+        height: 200px;
+        margin-top: 10%;
+    }
+
+    .f1{
+        text-align: center;
+        background-color: rgb(3 66 121);
+        color: white;
+        padding: 0.5%;
+        font-size: 15px;
+    }
+
+    .f2{
+        background-color: rgb(3 66 121);
+        color: white;
+        font-size: 12px;
+    }
+
+    #f2a{
+        padding: 1%;
+    }
+</style>
+
+<body>
+    <header>
+        Web Development Assignment II
+    </header>
+
+    <div id="Heading">
+        MY BOOKS
+    </div>
+    <div id="following">
+        These are the following Books, which i have refferd to :
+    </div>
+
+    <section class="firstSection">
+        <a href="https://www.goodreads.com/book/show/23255216-computer-fundamentals" target="_blank">
+            <img id="firstImg" src="https://m.media-amazon.com/images/I/41slQenlu+L.jpg" alt="">
+        </a>
+    
+        <div class="firstPara" id="first">
+            <h3 class="firstPara">Computer Fundamentals</h3>
+            <ul class="firstPara">
+                <li class="firstPara">This book is written by Anita Goel.</li>
+                <li class="firstPara">This book is perfect for beginners in computers.</li>
+                <li class="firstPara">The book contains several topics like introduction to computers, memory, input
+                    output system, several computer hardwares, operating system and many basic concepts.</li>
+                <li class="firstPara">This book has explained each and every concept in a manner which even interests a
+                    non-computer enthusiast.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="secondSection">
+        <a href="https://www.goodreads.com/book/show/9446212-let-us-c" target="_blank">
+            <img id="secondImg" src="https://images-na.ssl-images-amazon.com/images/I/51NuHATrs8L._SX354_BO1,204,203,200_.jpg" alt="">
+        </a>
+
+        <div class="secondPara" id="second">
+            <h3 class="secondPara">Let Us C</h3>
+            <ul class="secondPara">
+                <li class="secondPara">This book has been written by Yashavant Kanetkar.</li>
+                <li class="secondPara ">This book has described about C programmig language in depth.</li>
+                <li class="secondPara">Book has proper explanation with simple and understandable language</li>
+                <li class="secondPara">It as a best book for beginners and advanced students alike with hundreds of
+                    sample programming and associated notes.</li>
+
+            </ul>
+        </div>
+
+    </section>
+
+    <section class="thirdSection">
+        <a href="https://www.goodreads.com/book/show/83833.Operating_System_Concepts" target="_blank">
+            <img id="thirdImg" src="https://images-na.ssl-images-amazon.com/images/I/51Qy2upM+aL._SY344_BO1,204,203,200_.jpg" alt="">
+        </a>
+        
+        <div class="thirdPara" id="third">
+            <h3 class="thirdPara">Operating System Concepts</h3>
+            <ul class="thirdPara">
+                <li class="thirdPara">This book has been written by Peter Baer Galvin</li>
+                <li class="thirdPara">Book is famous for providing deep concepts of operating system in a simple manner.
+                </li>
+                <li class="thirdPara">This edition of the book has been thoroughly updated to include contemporary
+                    examples of how a operating system works.</li>
+                <li class="thirdPara">This book contains End-of-chapter problems, exercises, review questions, and
+                    programming exercises help to further reinforce important concepts. </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="f1">
+            <details class="f1">
+                <summary class="f1">
+                    This document has been written by : 
+                </summary>
+                Amit Kumar Student@MCA-NIT-Bhopal
+            </details>
+        </div>
+
+        <div class="f2" id="f2a">
+            <h5 class="f2">Contact Me:</h5>
+            <p class="f2">Amit Kumar <br>
+                Student @MCA-NIT-Bhopal <br>
+                Mob no.- 8873254890 <br>
+                email - amitsharmajm02@gmail.com <br>
+                Address - Sandalpur Patna-6
+            </p> 
+        </div>
+
+    </footer>
+</body>
+
+</html>
